@@ -1,0 +1,19 @@
+#!/bin/sh
+LLVM_CONFIG=llvm-config
+LLVM_LIBDIR=`$LLVM_CONFIG --libdir`
+
+# Construct Clang arguments.
+if [ `uname` = "Darwin" ]; then
+    libext=dylib
+else
+    libext=so
+fi
+
+#     -Xclang -load -Xclang $here/FunctionPointerAnno.$libext \
+
+## USED TO COMPILE programs and link against musl libs
+
+exec musl-clang -flto -Wimplicit-function-declaration -Werror -Xclang -load -Xclang $LLVM_LIBDIR/FPness.$libext \
+    -Xclang -add-plugin -Xclang fpness \
+    -Xclang -load -Xclang $LLVM_LIBDIR/FunctionPointerAnno.$libext \
+    $@
