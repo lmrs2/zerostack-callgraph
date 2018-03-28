@@ -40,11 +40,11 @@ clean:
 	rm -rf $(CHECKER_TARGET) $(CHECKER_OBJS) $(PASS_TARGET) $(PASS_OBJS)
 
 install: FPness.$(LIBEXT) FunctionPointerAnno.$(LIBEXT)
-	cp FPness.$(LIBEXT) $(LLVM_LIB_DIR) 
-	cp FunctionPointerAnno.$(LIBEXT) $(LLVM_LIB_DIR)
-	cp fpointer-cc $(LLVM_BIN_DIR)/CG-clang	&& chmod a+rx $(LLVM_BIN_DIR)/CG-clang
-	cp cg-compiler $(LLVM_BIN_DIR)/cg-compiler && chmod a+rx $(LLVM_BIN_DIR)/cg-compiler
-	touch /tmp/metafile_pass && chown $(USER) /tmp/metafile_pass	
+	@cp FPness.$(LIBEXT) $(LLVM_LIB_DIR) 
+	@cp FunctionPointerAnno.$(LIBEXT) $(LLVM_LIB_DIR)
+	@cp fpointer-cc $(LLVM_BIN_DIR)/CG-clang	&& chmod a+rx $(LLVM_BIN_DIR)/CG-clang
+	@cp cg-compiler $(LLVM_BIN_DIR)/cg-compiler && chmod a+rx $(LLVM_BIN_DIR)/cg-compiler
+	@touch /tmp/metafile_pass && chown $(USER) /tmp/metafile_pass	
 # Testing stuff.
 .PHONY: test smoke
 #test: $(TARGET)
