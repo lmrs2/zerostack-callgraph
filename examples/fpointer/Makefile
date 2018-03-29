@@ -4,8 +4,6 @@ CHECKER_SOURCES := FPness.cpp
 CHECKER_TARGET := FPness.$(LIBEXT)
 
 PASS_SOURCES := FunctionPointerAnno.cpp ../../AnnotationInfo.cpp
-HEADERS := ../../TypeAnnotations.h
-
 
 PASS_TARGET := FunctionPointerAnno.$(LIBEXT)
 
