@@ -1882,4 +1882,4 @@ protected:
 
 // Note: to get a pragma plugin, see http://clang.llvm.org/docs/ClangPlugins.html
 static FrontendPluginRegistry::Add<PluginExampleAction>
-X("fpness", "prevent null pointer dereferences");
+X("fpness", "function pointer annotations");
